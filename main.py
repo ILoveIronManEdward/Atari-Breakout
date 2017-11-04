@@ -52,14 +52,7 @@ initDir = randint(10, 170)       #Initial direction of the ball
 direction = initDir
 
 def ballFunction(d):
-    global ballX
-    global ballY
-    global boardX
-    global ballRadius
-    global boxWidth
-    global direction
-    global blockArray
-    global score
+    global ballX, ballY, boardX, ballRadius, boxWidth, direction, blockArray, score
     pygame.draw.circle(DISPLAY, white, (ballX, ballY), ballRadius)
     if (ballY + ballRadius >= 600 - boardHeight and ballY + ballRadius <= 600) and (ballX + ballRadius >= boardX - 2 and ballX - ballRadius <= boardX + boardWidth + 2): #When the ball hits the board
         if ballX >= boardX - 3 and ballX < boardX + boardWidth/2:
@@ -133,9 +126,7 @@ while True:
         label = font.render("Game Over", 1, (255,255,255))
         label2 = font.render("Score = ", 1, (255,255,255))
         label3 = font.render(str(score), 1, (255,255,255))
-        DISPLAY.blit(label, (370, 250))
-        DISPLAY.blit(label2, (370, 300))
-        DISPLAY.blit(label3, (620, 300))
+        DISPLAY.blit(label, (370, 250)); DISPLAY.blit(label2, (370, 300)); DISPLAY.blit(label3, (620, 300))
         pygame.display.update()
         time.sleep(5)
         pygame.display.quit()
